@@ -1,5 +1,4 @@
 #this is a boilerplate spark/scala code , with sbt and scalatests
-# i intend to write a sentimental analysis program using this approach
 # To run this on windown instal hadoop-comon (winutins.exe)
 # to run on cluster do spark-submit
 #step 1 to setup code on you machine (install git)
@@ -7,6 +6,9 @@ git clone https://github.com/bjaggi/SparkScalaDemo.git
 
 #step 2 (install sbt)
 sbt package or sbt run
+
+#step 2.1 to run this in eclipse do 
+sbt eclipse
 
 #step 3
 change code (todo add unit tests)
