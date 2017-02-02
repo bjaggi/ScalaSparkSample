@@ -28,4 +28,3 @@ sbt test
 
 #step9 to run sbt (not completely configured yet, probably not required as well)
 sbt run
-
