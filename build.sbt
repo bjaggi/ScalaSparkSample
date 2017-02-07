@@ -49,6 +49,9 @@ libraryDependencies ++= Seq(
 		//#"org.apache.spark" % "spark-streaming-kafka" % sparkVer exclude("org.apache.spark", "spark-streaming_2.11")
 		"org.apache.spark" %% "spark-hive" % "1.4.1" % "provided",
 		"org.apache.spark" %% "spark-hive" % "1.4.1" % "provided",
+		"org.apache.spark" % "spark-mllib_2.11" % "1.4.1" % "provided",
+		//"org.apache.spark" %% "spark-mllib_2.10" % "provided",
+		
 
         //"com.databricks" %% "spark-csv" % "1.4.0",
         //"com.databricks" %% "spark-avro" % "2.0.1",
@@ -59,6 +62,7 @@ libraryDependencies ++= Seq(
 		"org.scalatest" %% "scalatest" % "3.0.1",
 		"org.scalactic" %% "scalactic" % "3.0.1",
 		"org.scalatest" %% "scalatest" % "3.0.1" % "test"
+		//"com.holdenkarau" %% "spark-testing-base" % "1.6.1_0.3.2" 
 		
 		 
 		
