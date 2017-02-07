@@ -32,9 +32,10 @@ import scala.collection.Map
   }
 }
 
-// this class will create a report of all user transactions
+// this class will create a report 
 class UserTranxtnReport(sc: SparkContext) {
-  def run(t: String, u: String) : RDD[(Int, ((Int, String), (String, String, String)))]  = {
+  def run(t: String, u: String) : RDD[(Int, (String,String, String, String)) ] = {
+  // RDD[(Int, ((Int, String), (String, String, String)))]  = {
         val transactions = sc.textFile(t)
 	val newTransactionsPair = transactions.map{t =>                
 	    val p = t.split("\t")
@@ -51,11 +52,15 @@ class UserTranxtnReport(sc: SparkContext) {
 	return sc.parallelize(result.collect())
   } 
   
-  def processData (t: RDD[(Int, (Int, String ) )], u: RDD[(Int, (String,String, String)) ]) : RDD[(Int, ((Int, String), (String, String, String)))]  = {
+  def processData (t: RDD[(Int, (Int, String ) )], u: RDD[(Int, (String,String, String)) ]) :
+    RDD[(Int,(String, String, String, String))] = {
+
+  //RDD[(Int, ((Int, String), (String, String, String)))]  = {
 	var jn = t.join(u)
 	//println(jn)
 	println( jn.collect() )
-	return jn
+	return jn.map(a=>(a._1, (a._2._1._2, a._2._2._1,a._2._2._2,a._2._2._3)))
+	//return jn
   }
 }
 
