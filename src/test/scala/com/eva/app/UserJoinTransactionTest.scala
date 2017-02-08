@@ -55,6 +55,10 @@ class UserJoinTransactionTest extends FunSuite with BeforeAndAfter {
     println(arr.split(",")(2))
     Assert.assertEquals(arr.split(",")(2).replace("(",""), "matthew@test.com" )
    
+    // Better way
+     assert(result.collect()(0)._1 === "2")
+    assert(result.collect()(0)._2 === "matthew@test.com")
+
 
   }
   
