@@ -26,7 +26,8 @@ import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
 object SparkScalaML {
 
   def main(args: Array[String]) {
-
+    // sample input
+//https://www.google.ca/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8&safe=active&ssui=on#q=titanic+dataset+csv
 
   }
   
