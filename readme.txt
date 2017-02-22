@@ -30,3 +30,11 @@ sbt test
 
 #step9 to run sbt (not completely configured yet, probably not required as well)
 sbt run
+
+Ball Park Config
+1> 4-6 cores per executor
+1.a> if 90 cores on the cluster & we apply 5 cores per executor...we end up getting 90/5 = 18 executors
+2> Leave one EXECUTOR (5 cores) for the YARN- Application manager
+3> Partition size is usually 128MB
+4> Each Node has 3 EXECUTORS (15 core Node)
+5> 63GB/3 = 21GB (19GB memory each executor)...counting off head overhead.
