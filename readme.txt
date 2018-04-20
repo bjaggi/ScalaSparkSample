@@ -38,3 +38,8 @@ Ball Park Config
 3> Partition size is usually 128MB
 4> Each Node has 3 EXECUTORS (15 core Node)
 5> 63GB/3 = 21GB (19GB memory each executor)...counting off head overhead.
+
+
+
+Good Link : 
+https://stackoverflow.com/questions/47445328/adding-a-new-column-to-a-dataframe-by-using-the-values-of-multiple-other-columns?rq=1&utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
