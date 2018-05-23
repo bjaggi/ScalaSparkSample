@@ -26,14 +26,13 @@ object CreateNewColumnBasedOnExisting {
     import spark.implicits._
 
     // Concatenating 3 colummns data/time and seq number
-    val rbcUUIDGenUdf = udf(getConcatdColumns _)
+    val UUIDGenUdf = udf(getConcatdColumns _)
 
     logger.info(s" Schema : $df.printSchema()")
     logger.error("testing errors ")
 
     //println(s"====> " , df.printSchema())
-    //println(s"====> " , df.withColumn("newColumn", rbcUUIDGenUdf($"RBC_TRANS_DATE",$"RBC_TRANS_TIME",$"RBC_PROCESSING_SEQ_NUM")).first())
-    df = df.withColumn("newColumn", rbcUUIDGenUdf($"RBC_TRANS_DATE", $"RBC_TRANS_TIME", $"RBC_PROCESSING_SEQ_NUM"))
+    df = df.withColumn("newColumn", UUIDGenUdf($"TRANS_DATE", $"TRANS_TIME", $"PROCESSING_SEQ_NUM"))
     df.write.mode(SaveMode.Overwrite)
       .format("com.databricks.spark.csv").option("header", "true")
       .save("output_files/op.csv")
@@ -41,14 +40,7 @@ object CreateNewColumnBasedOnExisting {
 
   }
 
-  /**
-    * Get Concatenated String based on other 3 fields
-    *
-    * @param rbcDate
-    * @param rbcTime
-    * @param rbcSeqNum
-    * @return
-    */
-  def getConcatdColumns(rbcDate: String, rbcTime: String, rbcSeqNum: String): String = {
-    EpochTime.timeinms(rbcDate) + rbcTime.substring(0, 6) + rbcSeqNum
+  
+  def getConcatdColumns(bbcDate: String, bbcTime: String, bbcSeqNum: String): String = {
+    EpochTime.timeinms(bbcDate) + bbcTime.substring(0, 6) + bbcSeqNum
   }
