@@ -1,3 +1,5 @@
+sample present.
+
 #this is a boilerplate spark/scala code , with sbt and scalatests
 # To run this on windown instal hadoop-comon (winutins.exe)
 # to run on cluster do spark-submit
